@@ -16,16 +16,13 @@ void _div(stack_t **head, unsigned int count)
 		free_list(head);
 		exit(EXIT_FAILURE);
 	}
-	if (head != NULL && ptr != NULL && ptr->next != NULL)
-	{
-		num = ptr->next->n / ptr->n;
-		pop(head, count);
-		(*head)->n = num;
-	}
-	else
+	if (head == NULL || ptr == NULL || ptr->next != NULL)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", count);
 		free_list(head);
 		exit(EXIT_FAILURE);
 	}
+	num = ptr->next->n / ptr->n;
+	pop(head, count);
+	(*head)->n = num;
 }

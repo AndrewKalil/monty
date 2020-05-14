@@ -10,7 +10,7 @@ void rotl(stack_t **head, unsigned int count)
 	stack_t *ptr = *head, *last = *head, *first = *head;
 
 	(void)count;
-	if (head == NULL)
+	if (head == NULL || ptr == NULL || ptr->next == NULL)
 		return;
 	while (last->next != NULL)
 	{
