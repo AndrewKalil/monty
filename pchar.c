@@ -8,6 +8,7 @@
 void pchar(stack_t **head, unsigned int count)
 {
 	stack_t *ptr = *head;
+	int num = 0;
 
 	if (!(isascii(ptr->n)))
 	{
@@ -18,5 +19,9 @@ void pchar(stack_t **head, unsigned int count)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty", count);
 	}
-	printf("%c\n", ptr->n);
+	if (ptr != NULL)
+	{
+		num = ptr->n;
+		printf("%c\n", num);
+	}
 }
